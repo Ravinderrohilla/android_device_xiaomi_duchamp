@@ -41,22 +41,26 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 # Version / Maintainer infos.
 	export OF_MAINTAINER="Dr-Ravinder"
 	export FOX_VERSION="R11.1_1"
-	export FOX_BUILD_TYPE="Unofficial-Stable"
+	export FOX_BUILD_TYPE="Unofficial-test"
 
 # Custom pic for the maintainer's info in about section
 	export OF_MAINTAINER_AVATAR="$PWD/device/realme/RMX2117/maintainer.png"
 	
 # Device Information.
 	export FOX_ARCH=arm64
-	export FOX_VARIANT="A12_FBEv1"
-	export TARGET_DEVICE_ALT="RMX2117,RMX2117L1,RMX2111,RMX2111CN" # I am not what are the over possible names.
+	export FOX_VARIANT="A14_FBEv2"
+	export TARGET_DEVICE_ALT="duchamp,pocox6pro" # I am not what are the over possible names.
 
 # Partitions Handling
-	export FOX_RECOVERY_INSTALL_PARTITION="/dev/block/by-name/recovery"
 	export FOX_RECOVERY_SYSTEM_PARTITION="/dev/block/mapper/system"
 	export FOX_RECOVERY_VENDOR_PARTITION="/dev/block/mapper/vendor"
 	export FOX_RECOVERY_BOOT_PARTITION="/dev/block/by-name/boot"
+#virtual A/B PARTION
+        export FOX_AB_DEVICE=1
+	export FOX_VIRTUAL_AB_DEVICE=1
 
+#COMPRESSION
+       OF_USE_LZ4_COMPRESSION=1
 # OTA / DM-Verity / Encryption
     # Disabled the OTA settings by default.
 		export OF_DISABLE_MIUI_OTA_BY_DEFAULT=1
@@ -119,9 +123,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 		export OF_PATCH_AVB20=1
     # Prevent Splash Screen Changing.
 		export OF_NO_SPLASH_CHANGE=0
-    # Magisk Boot Patch.
-	#export OF_USE_MAGISKBOOT=1 
-		export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1
+
     # Metadata Support.
 	#export OF_FBE_METADATA_MOUNT_IGNORE=1 
 	# Multi-user Backup fix (error 255).
