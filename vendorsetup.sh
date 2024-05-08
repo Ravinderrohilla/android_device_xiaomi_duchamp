@@ -43,9 +43,6 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_VERSION="R11.1_1"
 	export FOX_BUILD_TYPE="Unofficial-test"
 
-# Custom pic for the maintainer's info in about section
-	export OF_MAINTAINER_AVATAR="$PWD/device/realme/RMX2117/maintainer.png"
-	
 # Device Information.
 	export FOX_ARCH=arm64
 	export FOX_VARIANT="A14_FBEv2"
