@@ -2,11 +2,6 @@
 # The filesystem that contains the filesystem checker binary (typically /system) cannot
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 
-# Logical partitions
-system            /system                 auto                        display="System"logical
-vendor            /vendor                 auto                        display="Vendor";logical
-product           /product                auto                        display="Product";logical
-odm               /odm                    auto                        display="ODM";logical
 
 #<mnt_point>        <type>    <device>                            <device2>                         <mnt_flags and options>
 /metadata           ext4      /dev/block/by-name/metadata                                           flags=display="metadata";backup=1
