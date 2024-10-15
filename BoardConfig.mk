@@ -109,7 +109,7 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 # Android Verified Boot
 # Verified Boot
 BOARD_AVB_ENABLE := true
-
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
 
 # TWRP Configuration
 TW_FRAMERATE := 60
